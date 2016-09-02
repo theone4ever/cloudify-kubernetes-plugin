@@ -3,7 +3,7 @@ import subprocess
 
 def get_docker(ctx):
   ctx.logger.info("getting docker")
-  ret=subprocess.call("wget -qO- https://get.docker.com/ | sed 's/lxc-docker/lxc-docker-1.6.2/'>/tmp/get_docker.sh",shell=True)
+  ret=subprocess.call("wget -qO- https://get.docker.com/ | sed 's/docker-engine/docker-engine-1.11.2-0~trusty/' >/tmp/get_docker.sh",shell=True)
   ctx.logger.info("getting docker ret={}".format(ret))
   subprocess.call("sudo sh /tmp/get_docker.sh > /tmp/get_docker.out",shell=True)
 
